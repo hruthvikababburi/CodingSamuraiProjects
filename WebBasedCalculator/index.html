@@ -5,41 +5,45 @@
     <meta name="description" content="Simple Web-Based Arithmetic Calculator project is a user-friendly online tool designed to perform basic arithmetic operations, including addition, subtraction, multiplication, and division. This calculator provides a convenient and accessible way for users to perform mathematical calculations directly from their web browsers without the need for additional software installations. ">
     <meta name="author" content="Hruthvika Babburi">
     <title>Web-Calculator</title>
-    <link>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="bg-cont">
-        <h1 class="heading">Hello Calculator</h1>
+        <h1 class="heading">Let's Calculate!</h1>
         <div class="container">
+            <div class="input-cont">
+                <input type="text" class="input-el" placeholder="Enter a number or mathematical expression...">
+                <button class="del-btn" title="Clear">X</button>
+            </div>
             <div class="row">
-                <button class="btn">C</button>
-                <button class="btn">X</button>
+                <button class="btn" title="Clear All">C</button>
                 <button class="btn">.</button>
-                <button class="btn">+</button>
+                <button class="btn operators" title="Percent">%</button>
+                <button class="btn operators" title="Add">+</button>
             </div>
             <div class="row">
                 <button class="btn">7</button>
                 <button class="btn">8</button>
                 <button class="btn">9</button>
-                <button class="btn">-</button>
+                <button class="btn operators" title="Subtract">-</button>
             </div>
             <div class="row">
                 <button class="btn">4</button>
                 <button class="btn">5</button>
                 <button class="btn">6</button>
-                <button class="btn">*</button>
+                <button class="btn operators" title="Multiply">*</button>
             </div>
             <div class="row">
                 <button class="btn">1</button>
                 <button class="btn">2</button>
                 <button class="btn">3</button>
-                <button class="btn">/</button>
+                <button class="btn operators" title="Divide">/</button>
             </div>
             <div class="row">
                 <button class="btn">0</button>
-                <button class="btn">%</button>
-                <button class="btn">a&sup2;</button>
-                <button class="btn">=</button>
+                <button class="btn operators"> &#x221A;a</button>
+                <button class="btn operators" title="a power b">a<sup>b</sup></button>
+                <button class="btn" title="Result">=</button>
             </div>
         </div>
     </div>
