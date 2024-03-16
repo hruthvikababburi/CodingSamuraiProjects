@@ -49,23 +49,37 @@
     color: #4b4a4a;
 
 }
-.input-el{
-    border-color: gray;
-    border-width: 1px;
+
+
+.input-el {
+    border: 1px solid gray;
     height: 50px;
     width: 100%;
-    outline: none;
     font-size: 18px;
+    outline: none;
     color: #4b4a4a;
     background-color: transparent;
 }
+
+.input-el:focus {
+    
+    box-shadow: 0px 0px 1px 1px;
+}
+
+
+
+
 .del-btn{
     position: absolute;
     top:20px;
     right: 10px;
     border: none;
     background-color: transparent;
+    color: gray;
     cursor: pointer;
+}
+.del-btn:hover {
+    font-size: 15px;
 }
 .btn{
     width: 120px;
