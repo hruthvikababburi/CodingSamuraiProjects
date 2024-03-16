@@ -13,7 +13,7 @@ Array.from(buttons).forEach((each)=>{
                 else{
                     try{
                         string = eval(string)
-                        if(string !== Infinity){
+                        if(string !== Infinity && !isNaN(string)){
                             console.log('correct')
                             console.log(string)
                             document.querySelector('input').value = string;
