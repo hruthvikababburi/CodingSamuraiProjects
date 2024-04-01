@@ -25,10 +25,6 @@ export default function Main() {
          </form>
          <div className='tasks-list-heading-cont'>
             <h2 className='tasks-list-heading'>Your Tasks</h2>
-            <div className='search-cont'>
-                <input type='text' className='search-bar' placeholder='Search for tasks'/>
-                <IoIosSearch className='search-icon' color='#084047'/>
-            </div>
          </div>
     </div>
   )

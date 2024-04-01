@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  
   padding: 10px;
 }
 
@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 15px;
-  
+  width: 80%;
 }
 .input-divs{
   display: flex;
@@ -43,6 +43,7 @@
   font-size: small;
   cursor: pointer;
   outline: none;
+  width: 100%
 }
 .task-el:focus{
   box-shadow: 0px 0px 5px 0px #a9bdc0;
@@ -57,6 +58,7 @@
   font-size: small;
   cursor: pointer;
   outline: none;
+  width: 150px;
 }
 .priority-el:focus{
   box-shadow: 0px 0px 3px 0px #889ea1;
@@ -85,9 +87,6 @@ label{
   width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  align-self: center;
 }
 .tasks-list-heading{
   font-size: x-large;
@@ -141,7 +140,7 @@ label{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
   }
   
   
@@ -164,9 +163,15 @@ label{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
-    justify-content: space-evenly;
+    width: 90%;
+    justify-content: space-between;
     
+  }
+  .input-divs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
   .task-el{
     background-color: transparent;
@@ -174,7 +179,7 @@ label{
     padding: 8px;
     border-radius: 4px;
     color: #4e5f61;
-    margin-bottom: 12px;
+    
     width: 350px;
     font-size: medium;
     outline: none;
@@ -189,7 +194,7 @@ label{
     padding: 8px;
     border-radius: 4px;
     color: #4e5f61;
-    margin-bottom: 12px;
+    
     width: 200px;
     font-size: medium;
   }
@@ -202,13 +207,15 @@ label{
     width: 100px;
     height: 40px;
     font-size: medium;
+    margin: 0px;
+    margin-bottom: 12px;
   }
   label{
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
     color: #084047;
     font-weight: 900;
-    margin: 5px;
+    
   }
   .tasks-list-heading-cont{
     width: 90%;
