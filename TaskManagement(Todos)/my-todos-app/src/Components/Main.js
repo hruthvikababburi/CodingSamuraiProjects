@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoIosSearch } from "react-icons/io";
 
 export default function Main() {
   return (
@@ -22,6 +23,13 @@ export default function Main() {
             </div>
             <button type='submit' className='add-btn'>Add</button>
          </form>
+         <div className='tasks-list-heading-cont'>
+            <h2 className='tasks-list-heading'>Your Tasks</h2>
+            <div className='search-cont'>
+                <input type='text' className='search-bar' placeholder='Search for tasks'/>
+                <IoIosSearch className='search-icon' color='#084047'/>
+            </div>
+         </div>
     </div>
   )
 }
