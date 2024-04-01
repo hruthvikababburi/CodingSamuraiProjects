@@ -63,13 +63,39 @@ export default function Main() {
          <div className='tasks-and-filter-cont'>
             <div className='tasks-list-cont'>
                 <div className='each-task-cont'>
-                    <div>
-                        <input type='checkbox' id='checkBox'/>
-                        <label htmlFor='checkbox' className='each-task'>TASK 1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</label>
+                    <div className='main-task-cont'>
+                        <input type='checkbox' id='checkBox' className='check-box'/>
+                        <label htmlFor='checkbox' className='each-task'>Task 1 ffff fffffffffff ffffff fffffffffffffff ffffff f f    fffffffffffff fffffffff fffff fffffff </label>
                     </div>
-                    <span className='task-priority'>High</span>
-                    <span>edit/save</span>
-                    <span>delete</span>
+                    <div className='task-tools'>
+                        <span className='task-priority high'>High</span>
+                        <button className='edit-save-del-btn'>edit</button>
+                        <button className='edit-save-del-btn'>delete</button>
+                    </div>
+                </div>
+                <div className='each-task-cont'>
+                    <div className='main-task-cont'>
+                        <input type='checkbox' id='checkBox' className='check-box'/>
+                        <label htmlFor='checkbox' className='each-task'>Task 1</label>
+                    </div>
+                    
+                    <div className='task-tools'>
+                        <span className='task-priority low'>Low</span>  
+                        <button className='edit-save-del-btn'>edit</button>
+                        <button className='edit-save-del-btn'>delete</button>
+                    </div>
+                </div>
+                <div className='each-task-cont'>
+                    <div className='main-task-cont'>
+                        <input type='checkbox' id='checkBox' className='check-box'/>
+                        <label htmlFor='checkbox' className='each-task'>Task 1</label>
+                    </div>
+                    
+                    <div className='task-tools'>
+                        <span className='task-priority medium'>Medium</span>
+                        <button className='edit-save-del-btn'>edit</button>
+                        <button className='edit-save-del-btn'>delete</button>
+                    </div>
                 </div>
             </div>
 
