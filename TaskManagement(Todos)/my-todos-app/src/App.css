@@ -12,10 +12,43 @@
 
 .heading{
   font-family: 'Courier New', Courier, monospace;
-  font-size:50px;
+  font-size:30px;
   color: #12506e;
   /* color: #09405a; */
 }
 .logo{
-  height: 60px;
+  height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-height: 730px){
+  .app{
+    background-color: #dbf3ff;
+    height: 100vh;
+  }
+  
+  
+  .heading-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .heading{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:50px;
+    color: #12506e;
+    /* color: #09405a; */
+  }
+  .logo{
+    height: 60px;
+  }
 }
