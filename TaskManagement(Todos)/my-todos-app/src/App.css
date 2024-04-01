@@ -138,12 +138,26 @@ label{
 .sort-el:focus{
   box-shadow: 0px 0px 3px 0px #889ea1;
 }
-.filter-tasks-cont{
+.form-3-filter-tasks-small {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  width: 90%;
 }
-
+.filter-heading{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  color: #084047;
+  font-weight: 700;
+ 
+}
+.filter-labels{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  color: #084047;
+  font-weight: 900;
+}
 .search-cont{
   flex-direction: row;
   align-items: center;
@@ -179,20 +193,32 @@ label{
   width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  
   margin-top: 15px;
 
 
 }
 .tasks-list-cont{
-  width: 80%;
+  width: 100%;
 }
 .each-task-cont{
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f9fb;
+  padding: 10px;
+  width: 100%;
 }
-.form-3-filter-tasks{
+.form-3-filter-tasks-md{
   width: 20%;
+  display: none;
 }
+.radio-inputs{
+  outline: none;
+  cursor: pointer;
+}
+
 
 
 
@@ -329,7 +355,52 @@ label{
   .priority-el:focus{
     box-shadow: 0px 0px 3px 0px #889ea1;
   }
-
+  .tasks-and-filter-cont{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+  
+  
+  }
+  .tasks-list-cont{
+    width: 85%;
+  }
+  .each-task-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f9fb;
+    padding: 10px;
+    margin-right: 15px;
+    width: 90%;
+  }
+  .each-task{
+    
+  }
+  .form-3-filter-tasks-md{
+    width: 15%;
+    display: inline;
+    border: 1px solid #12506e;
+    padding: 20px;
+    border-radius: 5px;
+    height: 150px;
+  }
+  .form-3-filter-tasks-small {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+  }
+  .sort-label{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    color: #084047;
+    font-weight: 700;
+   
+  }
 
 
 

@@ -45,29 +45,47 @@ export default function Main() {
                 </form>
             </div>
          </div>
+            <form className='form-3-filter-tasks-small '>
+                <h2 className='filter-heading'>Filter Tasks: </h2>
+                <div>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks' className='radio-inputs'/>
+                    <label className='filter-labels' htmlFor='allTasks'>All Tasks</label>
+                </div>
+                <div>
+                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed' className='radio-inputs'/>
+                    <label className='filter-labels' htmlFor='completed'>Complete Tasks</label>
+                </div>
+                <div>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='pending' className='radio-inputs'/>
+                    <label className='filter-labels' htmlFor='pending'>Pending Tasks</label>
+                </div>
+                </form>
          <div className='tasks-and-filter-cont'>
             <div className='tasks-list-cont'>
                 <div className='each-task-cont'>
-                    <input type='checkbox' id='checkBox'/>
-                    <label htmlFor='checkbox' className='each-task'>TASK 1</label>
+                    <div>
+                        <input type='checkbox' id='checkBox'/>
+                        <label htmlFor='checkbox' className='each-task'>TASK 1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</label>
+                    </div>
                     <span className='task-priority'>High</span>
                     <span>edit/save</span>
                     <span>delete</span>
                 </div>
             </div>
-            <form className='form-3-filter-tasks'>
-                <h2>Filter Tasks</h2>
+
+            <form className='form-3-filter-tasks-md'>
+                <h2 className='filter-heading'>Filter Tasks: </h2>
                 <div>
-                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks'/>
-                    <label className='task-status-label' htmlFor='allTasks'>All Tasks</label>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks' className='radio-inputs'/>
+                    <label className='filter-labels' htmlFor='allTasks'>All Tasks</label>
                 </div>
                 <div>
-                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed'/>
-                    <label className='task-status-label' htmlFor='completed'>Complete Tasks</label>
+                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed' className='radio-inputs'/>
+                    <label className='filter-labels' htmlFor='completed'>Complete Tasks</label>
                 </div>
                 <div>
-                    <input type='radio' value='All Tasks' name='Task_Status' id='pending'/>
-                    <label className='task-status-label' htmlFor='pending'>Pending Tasks</label>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='pending' className='radio-inputs'/>
+                    <label className='filter-labels' htmlFor='pending'>Pending Tasks</label>
                 </div>
             </form>
          </div>
