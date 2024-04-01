@@ -1,13 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Main from './Components/Main';
 
 function App() {
   return (
     <div className="app">
-      <div className='heading-cont'>
-        <img src='https://www.freeiconspng.com/uploads/tasks-icon-33.png' alt='logo' className='logo'/>
-        <h1 className='heading'>Task Manager</h1>
-      </div>
+      <Main/>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-.app{
+.main-comp{
   background-color: #dbf3ff;
   height: 100vh;
 }
@@ -30,7 +30,7 @@
 
 
 @media (min-height: 730px){
-  .app{
+  .main-comp{
     background-color: #dbf3ff;
     height: 100vh;
   }
