@@ -25,6 +25,51 @@ export default function Main() {
          </form>
          <div className='tasks-list-heading-cont'>
             <h2 className='tasks-list-heading'>Your Tasks</h2>
+            <div className='tasks-list-modifying-elements-cont'>
+                <form className='form-2'>
+                    <div className='search-cont'>
+                        <input type='text' className='search-bar' placeholder='Search for tasks'/>
+                        <IoIosSearch className='search-icon' color='#084047'/>
+                    </div>
+                    <div className='sort-tasks-cont'>
+                        <label htmlFor='sortTasks' className='sort-label'>Sort Tasks:</label>
+                        <select id='sortTasks' className='sort-el'>
+                            <option value='High-Low'>High-Low</option>
+                            <option value='Low-High'>Low-High</option>
+                        </select>
+                    </div>
+                   
+                    
+
+
+                </form>
+            </div>
+         </div>
+         <div className='tasks-and-filter-cont'>
+            <div className='tasks-list-cont'>
+                <div className='each-task-cont'>
+                    <input type='checkbox' id='checkBox'/>
+                    <label htmlFor='checkbox' className='each-task'>TASK 1</label>
+                    <span className='task-priority'>High</span>
+                    <span>edit/save</span>
+                    <span>delete</span>
+                </div>
+            </div>
+            <form className='form-3-filter-tasks'>
+                <h2>Filter Tasks</h2>
+                <div>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks'/>
+                    <label className='task-status-label' htmlFor='allTasks'>All Tasks</label>
+                </div>
+                <div>
+                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed'/>
+                    <label className='task-status-label' htmlFor='completed'>Complete Tasks</label>
+                </div>
+                <div>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='pending'/>
+                    <label className='task-status-label' htmlFor='pending'>Pending Tasks</label>
+                </div>
+            </form>
          </div>
     </div>
   )

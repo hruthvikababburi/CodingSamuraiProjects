@@ -1,6 +1,6 @@
 .main-comp{
   background-color: #dbf3ff;
-  height: 100vh;
+  
   display: flex;
   flex-direction: column;
   
@@ -32,6 +32,8 @@
 .input-divs{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .task-el{
   background-color: transparent;
@@ -84,7 +86,7 @@ label{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .tasks-list-heading-cont{
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -93,6 +95,55 @@ label{
   font-family: 'Courier New', Courier, monospace;
   color: #12506e;
 }
+.tasks-list-modifying-elements-cont{
+  display: flex;
+  width: 100%;
+
+}
+.form-2{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.sort-tasks-cont{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 12px;
+  
+}
+.sort-label{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  color: #084047;
+  font-weight: 700;
+ 
+}
+
+.sort-el{
+  background-color: transparent;
+  border: 1px solid #084047;
+  padding: 8px;
+  border-radius: 4px;
+  color: #4e5f61;
+  margin-bottom: 15px;
+  font-size: small;
+  cursor: pointer;
+  outline: none;
+  width: 100px;
+}
+.sort-el:focus{
+  box-shadow: 0px 0px 3px 0px #889ea1;
+}
+.filter-tasks-cont{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .search-cont{
   flex-direction: row;
   align-items: center;
@@ -123,6 +174,24 @@ label{
 }
 .search-cont:focus-within{
   box-shadow: 0px 0px 5px 0px #a9bdc0;
+}
+.tasks-and-filter-cont{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+
+
+}
+.tasks-list-cont{
+  width: 80%;
+}
+.each-task-cont{
+
+}
+.form-3-filter-tasks{
+  width: 20%;
 }
 
 
@@ -162,16 +231,16 @@ label{
   .form-el{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    
     width: 90%;
     justify-content: space-between;
+    align-items: center;
     
   }
   .input-divs{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
   }
   .task-el{
     background-color: transparent;
@@ -220,10 +289,8 @@ label{
   .tasks-list-heading-cont{
     width: 90%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    align-self: center;
+    flex-direction: column;
+    
   }
   .tasks-list-heading{
     font-size: xx-large;
