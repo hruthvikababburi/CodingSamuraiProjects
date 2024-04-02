@@ -215,6 +215,9 @@ label{
 }
 .task-tools{
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form-3-filter-tasks-md{
@@ -241,8 +244,9 @@ label{
 }
 .task-priority{
   font-family: 'Courier New', Courier, monospace;
-  font-size: large;
-  font-weight: 900;
+  font-size: medium;
+  font-weight: 700;
+  margin-bottom: 0px;
 }
 .high{
   color:#c61618;
@@ -255,6 +259,7 @@ label{
 }
 .edit-save-del-btn{
   margin-left: 5px;
+  cursor: pointer;
 }
 
 

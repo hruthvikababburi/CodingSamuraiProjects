@@ -1,24 +1,73 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {v4 as uuidv4} from 'uuid'
 import { IoIosSearch } from "react-icons/io";
+import Task from './Task';
 
 export default function Main() {
+  const [tasksList,setTasksList] = useState([]);
+
+  const [taskText,setTaskText] = useState('')
+  const [taskPriority,setTaskPriority] = useState('High')
+
+  const handleTaskTextChange=(e)=>{
+    setTaskText(e.target.value)
+  }
+
+  const handleTaskPriorityChange=(e)=>{
+    setTaskPriority(e.target.value)
+  }
+
+  const handleTaskAddition=(e)=>{
+    e.preventDefault();
+
+    if(taskText.trim() === ''){
+        alert('Enter valid task to add!')
+    }
+    else{
+        const newTask = {
+            id: uuidv4(),
+            task: taskText,
+            priority: taskPriority,
+            isChecked: false
+        }
+        setTasksList((pre)=>{
+            return [...pre,newTask]
+        })
+        setTaskText('');
+        setTaskPriority('High');
+      }
+  }
+
+  const handleDeleteTask = (id)=>{
+    const newList = tasksList.filter((eachTask)=> eachTask.id !== id)
+    setTasksList(newList)
+  }
+
+  const handleEditTask=()=>{
+
+  }
+  
+
+  
+  
+
   return (
     <div className='main-comp'>
         <div className='heading-cont'>
             <img src='https://www.freeiconspng.com/uploads/tasks-icon-33.png' alt='logo' className='logo'/>
             <h1 className='heading'>Task Manager</h1>
         </div>
-         <form className='form-el'>
+         <form className='form-el' onSubmit={handleTaskAddition}>
             <div className='input-divs'>
                 <label htmlFor='taskEl'>Enter Task:</label>
-                <input type='text' id='taskEl' placeholder='Ex: Completing Assignments, etc.' className='task-el'/>
+                <input type='text' id='taskEl' placeholder='Ex: Completing Assignments, etc.' className='task-el' onChange={handleTaskTextChange} value={taskText}/>
             </div>
             <div className='input-divs'>
                 <label htmlFor='priorityEl'>Set Priority:</label>
-                <select id='priorityEl' className='priority-el'>
-                    <option>High</option>
-                    <option>Medium</option>
-                    <option>Low</option>
+                <select id='priorityEl' className='priority-el' onChange={handleTaskPriorityChange} value={taskPriority}>
+                    <option value='High'>High</option>
+                    <option value='Medium'>Medium</option>
+                    <option value='Low'>Low</option>
                 </select>
             </div>
             <button type='submit' className='add-btn'>Add</button>
@@ -62,41 +111,12 @@ export default function Main() {
                 </form>
          <div className='tasks-and-filter-cont'>
             <div className='tasks-list-cont'>
-                <div className='each-task-cont'>
-                    <div className='main-task-cont'>
-                        <input type='checkbox' id='checkBox' className='check-box'/>
-                        <label htmlFor='checkbox' className='each-task'>Task 1 ffff fffffffffff ffffff fffffffffffffff ffffff f f    fffffffffffff fffffffff fffff fffffff </label>
-                    </div>
-                    <div className='task-tools'>
-                        <span className='task-priority high'>High</span>
-                        <button className='edit-save-del-btn'>edit</button>
-                        <button className='edit-save-del-btn'>delete</button>
-                    </div>
-                </div>
-                <div className='each-task-cont'>
-                    <div className='main-task-cont'>
-                        <input type='checkbox' id='checkBox' className='check-box'/>
-                        <label htmlFor='checkbox' className='each-task'>Task 1</label>
-                    </div>
+                {tasksList.map((eachTask)=>{
+                    return(
+                        <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleEditTask={handleEditTask}/>
+                    )
                     
-                    <div className='task-tools'>
-                        <span className='task-priority low'>Low</span>  
-                        <button className='edit-save-del-btn'>edit</button>
-                        <button className='edit-save-del-btn'>delete</button>
-                    </div>
-                </div>
-                <div className='each-task-cont'>
-                    <div className='main-task-cont'>
-                        <input type='checkbox' id='checkBox' className='check-box'/>
-                        <label htmlFor='checkbox' className='each-task'>Task 1</label>
-                    </div>
-                    
-                    <div className='task-tools'>
-                        <span className='task-priority medium'>Medium</span>
-                        <button className='edit-save-del-btn'>edit</button>
-                        <button className='edit-save-del-btn'>delete</button>
-                    </div>
-                </div>
+                })}
             </div>
 
             <form className='form-3-filter-tasks-md'>
