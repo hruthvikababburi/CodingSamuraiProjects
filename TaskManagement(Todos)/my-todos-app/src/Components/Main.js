@@ -1,10 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {v4 as uuidv4} from 'uuid'
 import { IoIosSearch } from "react-icons/io";
 import Task from './Task';
 
 export default function Main() {
-  const [tasksList,setTasksList] = useState([]);
+  const [tasksList,setTasksList] = useState(
+    JSON.parse(localStorage.getItem('tasksList'))||[]
+  );
+
+  useEffect(
+    ()=>{
+        localStorage.setItem('tasksList',JSON.stringify(tasksList))
+    },[tasksList]
+  )
 
   const [taskText,setTaskText] = useState('')
   const [taskPriority,setTaskPriority] = useState('High')
