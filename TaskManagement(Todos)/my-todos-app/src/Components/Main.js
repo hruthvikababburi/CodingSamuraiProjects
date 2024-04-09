@@ -43,8 +43,15 @@ export default function Main() {
     setTasksList(newList)
   }
 
-  const handleEditTask=()=>{
-
+  const handleSaveEdittedTask=(id,newText)=>{
+    const updatedTasksList = tasksList.map((eachTask)=>{
+        if (eachTask.id === id){
+            eachTask.task = newText
+            return {...eachTask, task: newText}
+        }
+        return eachTask
+    })
+    setTasksList(updatedTasksList)
   }
   
 
@@ -113,7 +120,7 @@ export default function Main() {
             <div className='tasks-list-cont'>
                 {tasksList.map((eachTask)=>{
                     return(
-                        <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleEditTask={handleEditTask}/>
+                        <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleSaveEdittedTask={handleSaveEdittedTask}/>
                     )
                     
                 })}
