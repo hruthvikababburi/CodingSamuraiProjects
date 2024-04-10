@@ -4,9 +4,14 @@ import { IoIosSearch } from "react-icons/io";
 import Task from './Task';
 
 export default function Main() {
-  const [tasksList,setTasksList] = useState(
-    JSON.parse(localStorage.getItem('tasksList'))||[]
-  );
+  const originalList =  JSON.parse(localStorage.getItem('tasksList'))||[]
+  const [tasksList,setTasksList] = useState(originalList);
+  const [taskText,setTaskText] = useState('')
+  const [taskPriority,setTaskPriority] = useState('High')
+  const [sortingOption,setSortingOption] = useState('High-Low')
+  const [tasksCompletionStatus,setTasksCompletionStatus] = useState('All Tasks')
+  const [searchText, setSearchText] = useState('');
+  const [filteredTasks, setFilteredTasks] = useState([]);
 
   useEffect(
     ()=>{
@@ -14,9 +19,19 @@ export default function Main() {
     },[tasksList]
   )
 
-  const [taskText,setTaskText] = useState('')
-  const [taskPriority,setTaskPriority] = useState('High')
-  const [sortingOption,setSortingOption] = useState('High-Low')
+  useEffect(() => {
+    let filtered = tasksList.filter(task =>
+      task.task.toLowerCase().includes(searchText.toLowerCase())
+    );
+  
+    if (tasksCompletionStatus === 'Completed Tasks') {
+      filtered = filtered.filter(task => task.isChecked);
+    } else if (tasksCompletionStatus === 'Pending Tasks') {
+      filtered = filtered.filter(task => !task.isChecked);
+    }
+  
+    setFilteredTasks(filtered);
+  }, [searchText, tasksList, tasksCompletionStatus]);
 
   const handleTaskTextChange=(e)=>{
     setTaskText(e.target.value)
@@ -89,7 +104,22 @@ export default function Main() {
     }
     setTasksList(updatedSortedList)
   }
+
   
+  
+
+  const handleFilterOption=(e)=>{
+    setTasksCompletionStatus(e.target.value)
+  }
+
+//   const filteredTasks = tasksCompletionStatus === 'Completed Tasks' ? tasksList.filter((task) => task.isChecked) :
+//                         tasksCompletionStatus === 'Pending Tasks' ? tasksList.filter((task) => !task.isChecked) :
+//                         tasksList;
+   
+   const handleSearch=(e)=>{
+    setSearchText(e.target.value)
+   }                     
+
 
   
   
@@ -120,7 +150,7 @@ export default function Main() {
             <div className='tasks-list-modifying-elements-cont'>
                 <form className='form-2'>
                     <div className='search-cont'>
-                        <input type='text' className='search-bar' placeholder='Search for tasks'/>
+                        <input type='search' className='search-bar' placeholder='Search for tasks' value={searchText} onChange={handleSearch}/>
                         <IoIosSearch className='search-icon' color='#084047'/>
                     </div>
                     <div className='sort-tasks-cont'>
@@ -140,21 +170,21 @@ export default function Main() {
             <form className='form-3-filter-tasks-small '>
                 <h2 className='filter-heading'>Filter Tasks: </h2>
                 <div>
-                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks' className='radio-inputs'/>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks' className='radio-inputs'onClick={handleFilterOption}/>
                     <label className='filter-labels' htmlFor='allTasks'>All Tasks</label>
                 </div>
                 <div>
-                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed' className='radio-inputs'/>
+                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed' className='radio-inputs' onClick={handleFilterOption}/>
                     <label className='filter-labels' htmlFor='completed'>Complete Tasks</label>
                 </div>
                 <div>
-                    <input type='radio' value='All Tasks' name='Task_Status' id='pending' className='radio-inputs'/>
+                    <input type='radio' value='Pending Tasks' name='Task_Status' id='pending' className='radio-inputs' onClick={handleFilterOption}/>
                     <label className='filter-labels' htmlFor='pending'>Pending Tasks</label>
                 </div>
                 </form>
          <div className='tasks-and-filter-cont'>
             <div className='tasks-list-cont'>
-                {tasksList.map((eachTask)=>{
+                {filteredTasks.map((eachTask)=>{
                     return(
                         <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleSaveEdittedTask={handleSaveEdittedTask} handleCheckedTask={handleCheckedTask}/>
                     )
@@ -165,15 +195,15 @@ export default function Main() {
             <form className='form-3-filter-tasks-md'>
                 <h2 className='filter-heading'>Filter Tasks: </h2>
                 <div>
-                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks' className='radio-inputs'/>
+                    <input type='radio' value='All Tasks' name='Task_Status' id='allTasks' className='radio-inputs' onClick={handleFilterOption}/>
                     <label className='filter-labels' htmlFor='allTasks'>All Tasks</label>
                 </div>
                 <div>
-                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed' className='radio-inputs'/>
+                    <input type='radio' value='Completed Tasks' name='Task_Status' id='completed' className='radio-inputs' onClick={handleFilterOption}/>
                     <label className='filter-labels' htmlFor='completed'>Complete Tasks</label>
                 </div>
                 <div>
-                    <input type='radio' value='All Tasks' name='Task_Status' id='pending' className='radio-inputs'/>
+                    <input type='radio' value='Pending Tasks' name='Task_Status' id='pending' className='radio-inputs' onClick={handleFilterOption}/>
                     <label className='filter-labels' htmlFor='pending'>Pending Tasks</label>
                 </div>
             </form>

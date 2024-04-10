@@ -30,6 +30,13 @@ export default function Task(props) {
    const handleChangeOfCheck=()=>{
     handleCheckedTask(eachTask.id,eachTask.isChecked)
    }
+
+   
+
+
+
+
+
   return (
         <>
           {isEditMode ? (
