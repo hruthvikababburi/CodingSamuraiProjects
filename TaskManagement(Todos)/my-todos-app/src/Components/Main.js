@@ -76,6 +76,18 @@ export default function Main() {
 
   const handleSortingChange=(e)=>{
     setSortingOption(e.target.value)
+    let updatedSortedList = []
+    const HighSorted = tasksList.filter(eachTask=> eachTask.priority === 'High')
+    const LowSorted = tasksList.filter(eachTask=> eachTask.priority === 'Low')
+    const MediumSorted = tasksList.filter(eachTask=> eachTask.priority === 'Medium')
+
+    if(e.target.value === 'High-Low'){
+        updatedSortedList = [...HighSorted,...MediumSorted,...LowSorted]
+    }
+    else{
+        updatedSortedList = [...LowSorted,...MediumSorted,...HighSorted]
+    }
+    setTasksList(updatedSortedList)
   }
   
 
