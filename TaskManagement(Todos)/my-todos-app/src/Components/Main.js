@@ -16,6 +16,7 @@ export default function Main() {
 
   const [taskText,setTaskText] = useState('')
   const [taskPriority,setTaskPriority] = useState('High')
+  const [sortingOption,setSortingOption] = useState('High-Low')
 
   const handleTaskTextChange=(e)=>{
     setTaskText(e.target.value)
@@ -72,6 +73,10 @@ export default function Main() {
     })
     setTasksList(updatedTasksListOnChecks)
   }
+
+  const handleSortingChange=(e)=>{
+    setSortingOption(e.target.value)
+  }
   
 
   
@@ -108,7 +113,7 @@ export default function Main() {
                     </div>
                     <div className='sort-tasks-cont'>
                         <label htmlFor='sortTasks' className='sort-label'>Sort Tasks:</label>
-                        <select id='sortTasks' className='sort-el'>
+                        <select id='sortTasks' className='sort-el' value={sortingOption} onChange={handleSortingChange}>
                             <option value='High-Low'>High-Low</option>
                             <option value='Low-High'>Low-High</option>
                         </select>
