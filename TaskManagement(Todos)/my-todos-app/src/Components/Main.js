@@ -183,14 +183,18 @@ export default function Main() {
                 </div>
                 </form>
          <div className='tasks-and-filter-cont'>
-            <div className='tasks-list-cont'>
-                {filteredTasks.map((eachTask)=>{
-                    return(
-                        <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleSaveEdittedTask={handleSaveEdittedTask} handleCheckedTask={handleCheckedTask}/>
-                    )
-                    
-                })}
+            {filteredTasks.length === 0 ? (
+                <p className='no-tasks-text'>No Tasks</p>
+            ) : (
+                <div className='tasks-list-cont'>
+                    {filteredTasks.map((eachTask)=>{
+                        return(
+                            <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleSaveEdittedTask={handleSaveEdittedTask} handleCheckedTask={handleCheckedTask}/>
+                        )
+                        
+                    })}
             </div>
+            )}
 
             <form className='form-3-filter-tasks-md'>
                 <h2 className='filter-heading'>Filter Tasks: </h2>

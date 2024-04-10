@@ -201,6 +201,15 @@ label{
 .tasks-list-cont{
   width: 100%;
 }
+.no-tasks-text{
+  width: 100%;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  font-weight: 600;
+  color: #12506e;
+  
+}
 .each-task-cont{
   display: flex;
   flex-direction: column;
@@ -422,6 +431,15 @@ label{
   }
   .tasks-list-cont{
     width: 85%;
+  }
+  .no-tasks-text{
+    width: 90%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    font-weight: 600;
+    color: #12506e;
+    
   }
   .each-task-cont{
     display: flex;
