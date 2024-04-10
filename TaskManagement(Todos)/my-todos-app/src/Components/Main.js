@@ -61,6 +61,17 @@ export default function Main() {
     })
     setTasksList(updatedTasksList)
   }
+
+  const handleCheckedTask =(id,checkStatus)=>{
+    console.log('is changing',id, checkStatus)
+    const updatedTasksListOnChecks = tasksList.map((eachTask)=>{
+        if (eachTask.id === id){
+            return {...eachTask, isChecked: !checkStatus}
+        }
+        return eachTask
+    })
+    setTasksList(updatedTasksListOnChecks)
+  }
   
 
   
@@ -128,7 +139,7 @@ export default function Main() {
             <div className='tasks-list-cont'>
                 {tasksList.map((eachTask)=>{
                     return(
-                        <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleSaveEdittedTask={handleSaveEdittedTask}/>
+                        <Task key={eachTask.id} eachTask={eachTask} handleDeleteTask={handleDeleteTask} handleSaveEdittedTask={handleSaveEdittedTask} handleCheckedTask={handleCheckedTask}/>
                     )
                     
                 })}

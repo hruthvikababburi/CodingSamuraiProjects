@@ -1,7 +1,7 @@
 import React, { useState,useRef } from 'react'
 
 export default function Task(props) {
-   const  {eachTask,handleDeleteTask,handleSaveEdittedTask} = props
+   const  {eachTask,handleDeleteTask,handleSaveEdittedTask,handleCheckedTask} = props
    const [isEditMode,setIsEditMode] = useState(false)
    const [edittedText, setEdittedText] = useState(eachTask.task)
    const inputRef = useRef(null)
@@ -26,6 +26,10 @@ export default function Task(props) {
    const deleteTask=()=>{
     handleDeleteTask(eachTask.id)
    }
+
+   const handleChangeOfCheck=()=>{
+    handleCheckedTask(eachTask.id,eachTask.isChecked)
+   }
   return (
         <>
           {isEditMode ? (
@@ -45,7 +49,7 @@ export default function Task(props) {
           ): (
             <div className='each-task-cont'>
                 <div className='main-task-cont'>
-                    <input type='checkbox' id='checkBox' className='check-box' checked={eachTask.isChecked}/>
+                    <input type='checkbox' id='checkBox' className='check-box' checked={eachTask.isChecked} onChange={handleChangeOfCheck}/>
                     <label htmlFor='checkbox' className='each-task'>{eachTask.task}</label>
                 </div>
                 <div className='task-tools'>
